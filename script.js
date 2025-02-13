@@ -42,12 +42,27 @@ document.getElementById('btn-howToDesignSect').addEventListener('click', functio
   handleButtonClick(this);
 });
 
+document.getElementById('btn-preFooterSect').addEventListener('click', function(){
+  handleButtonClick(this);
+});
+
 // Functions for buttons without background 
 
 document.getElementById('btn-teslaSect').addEventListener('click', function() {
   withoutBgBtnAnim(this);
 });
 
-document.getElementsByClassName('.box-btn-marketingSect').addEventListener.for('click', function(button){
-  withoutBgBtnAnim(this)
-})
+const inputFooter = document.querySelector('.input-footer');
+
+function sendBtnAnimation() {
+  if (inputFooter.value.trim() === "") {
+    alert('Please, enter text!');
+    return;
+  }
+
+  alert(`Sent message: ${inputFooter.value}`);
+
+  inputFooter.value = "";
+}
+
+document.getElementById('input-btn-footer').addEventListener('click', sendBtnAnimation);
